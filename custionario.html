@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cuestionario de Manzanas</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.container{
+    background: white;
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1{
+    color: #d62828;
+}
+
+.question{
+    margin: 15px 0;
+    text-align: left;
+}
+
+button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #d62828;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #a4161a;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+<h1>🍎 Cuestionario de Manzanas</h1>
+
+<form id="quiz">
+
+<div class="question">
+<p>1. ¿Te gustan las manzanas?</p>
+<label><input type="radio" name="q1" value="si"> Sí</label>
+<label><input type="radio" name="q1" value="no"> No</label>
+</div>
+
+<div class="question">
+<p>2. ¿Comes manzanas todos los días?</p>
+<label><input type="radio" name="q2" value="si"> Sí</label>
+<label><input type="radio" name="q2" value="no"> No</label>
+</div>
+
+<div class="question">
+<p>3. ¿Prefieres las manzanas rojas?</p>
+<label><input type="radio" name="q3" value="si"> Sí</label>
+<label><input type="radio" name="q3" value="no"> No</label>
+</div>
+
+<div class="question">
+<p>4. ¿Te gusta el zumo de manzana?</p>
+<label><input type="radio" name="q4" value="si"> Sí</label>
+<label><input type="radio" name="q4" value="no"> No</label>
+</div>
+
+<div class="question">
+<p>5. ¿Has probado la tarta de manzana?</p>
+<label><input type="radio" name="q5" value="si"> Sí</label>
+<label><input type="radio" name="q5" value="no"> No</label>
+</div>
+
+<button type="button" onclick="resultado()">Ver resultado</button>
+
+</form>
+
+<p id="resultado"></p>
+
+</div>
+
+<script>
+function resultado(){
+    let respuestas = document.querySelectorAll('input[value="si"]:checked');
+    let total = respuestas.length;
+
+    document.getElementById("resultado").innerHTML =
+    "Has respondido 'Sí' en " + total + " preguntas.";
+}
+</script>
+
+</body>
+</html>
